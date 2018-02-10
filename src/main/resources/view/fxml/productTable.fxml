@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<TableView fx:id="productTable" prefWidth="350.0"
+           xmlns="http://javafx.com/javafx/8.0.121"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.name.app.controller.ProductTableController">
+    <columns>
+        <TableColumn fx:id="id" prefWidth="30.0" text="ID"/>
+        <TableColumn fx:id="name" prefWidth="200.0" text="Наименование"/>
+        <TableColumn fx:id="quantity" prefWidth="50.0" text="Кол-во"/>
+        <TableColumn fx:id="price" prefWidth="50.0" text="Цена"/>
+    </columns>
+</TableView>
