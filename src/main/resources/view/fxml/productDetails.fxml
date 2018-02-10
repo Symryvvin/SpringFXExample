@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints prefWidth="150.0"/>
+                <ColumnConstraints prefWidth="300.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints prefHeight="30.0"/>
+                <RowConstraints prefHeight="30.0"/>
+                <RowConstraints prefHeight="30.0"/>
+                <RowConstraints prefHeight="30.0"/>
+                <RowConstraints prefHeight="30.0"/>
+                <RowConstraints prefHeight="30.0"/>
+            </rowConstraints>
+            <Label fx:id="name" style="-fx-font-weight: bold;-fx-padding: 3px;"
+                   prefWidth="450"
+                   GridPane.columnSpan="2" alignment="CENTER"/>
+            <Label style="-fx-font-weight: bold; -fx-padding: 3px;"
+                   GridPane.rowIndex="1" text="ГУИД:"/>
+            <Label fx:id="guid" style="-fx-padding: 3px;" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label style="-fx-font-weight: bold; -fx-padding: 3px;"
+                   GridPane.rowIndex="2" text="Количество на складе:"/>
+            <Label fx:id="quantity" style="-fx-padding: 3px;" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Label style="-fx-font-weight: bold; -fx-padding: 3px;"
+                   GridPane.rowIndex="3" text="Цена:"/>
+            <Label fx:id="price" style="-fx-padding: 3px;" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <Label style="-fx-font-weight: bold; -fx-padding: 3px;"
+                   GridPane.rowIndex="4" text="Общая стоимость:"/>
+            <Label fx:id="costOfAll" style="-fx-padding: 3px;" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            <Label style="-fx-font-weight: bold; -fx-padding: 3px;"
+                   GridPane.rowIndex="5" text="Налог:"/>
+            <Label fx:id="tax" style="-fx-padding: 3px;" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        </GridPane>
+    </children>
+</AnchorPane>

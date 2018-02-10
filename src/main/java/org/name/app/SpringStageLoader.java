@@ -54,6 +54,10 @@ public class SpringStageLoader implements ApplicationContextAware {
         return stage;
     }
 
+    public static Scene loadScene(String fxmlName) throws IOException {
+        return new Scene(load(fxmlName));
+    }
+
     /**
      * Передаем данные в статические поля в реализации метода интерфейса ApplicationContextAware,
      т.к. методы их использующие тоже статические

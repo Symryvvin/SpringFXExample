@@ -3,6 +3,7 @@ package org.name.app.controller;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.name.model.Product;
@@ -27,6 +28,16 @@ public class ProductTableController extends Controller{
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
+        productTable.setRowFactory(rf -> {
+            TableRow<Product> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (!row.isEmpty())) {
+                    ProductDetailsModalStage stage = new ProductDetailsModalStage();
+                    stage.showDetails(row.getItem());
+                }
+            });
+            return row;
+        });
     }
 
     /**
