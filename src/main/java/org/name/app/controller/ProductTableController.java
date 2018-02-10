@@ -6,10 +6,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.name.model.Product;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-public class ProductTableController {
+@Component
+public class ProductTableController extends Controller{
 
     @FXML private TableColumn<Integer, Product> id;
     @FXML private TableColumn<String, Product> name;

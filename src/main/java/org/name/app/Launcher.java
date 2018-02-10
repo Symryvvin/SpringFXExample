@@ -1,22 +1,36 @@
 package org.name.app;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.io.IOException;
 
 public class Launcher extends Application {
+    private static ClassPathXmlApplicationContext context;
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass()
-                .getResource("/view/fxml/main.fxml"));
-        stage.setTitle("JavaFX Maven Spring");
-        stage.setScene(new Scene(root));
-        stage.show();
+    /**
+     * Инициализируем контекст
+     */
+    @Override
+    public void init() {
+        context = new ClassPathXmlApplicationContext("application-context.xml");
+    }
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        SpringStageLoader.loadMain().show();
+    }
+
+    /**
+     * Освобождаем контекст
+     */
+    @Override
+    public void stop() throws IOException {
+        context.close();
     }
 }
